@@ -12,3 +12,8 @@ $git add 文件名			#添加指定文件到Git的仓库中
 $git commit -m "xx"			#提交文件到Git的仓库，"—m"是参数，xx为改动的说明
 $git status					#查看仓库的当前状态，可用于判别是否有文件修改后却未添加add到仓库，以及是否提交commit
 $git diff                   #若有修改，则将显示修改信息
+
+$git log					#显示修改信息。--pretty=online美化下信息
+$git reset --hard HEAD^		#版本回退。HEAD^回退到上一个，HEAD^^回退到上上个，HEAD~100回到上100的版本
+$git reset --hard 版本ID	#回到版本号所对应的版本中，支持向前向后回复版本
+$git reflog					#可以查看全部的版本变化
