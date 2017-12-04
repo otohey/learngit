@@ -17,3 +17,7 @@ $git log					#显示修改信息。--pretty=online美化下信息
 $git reset --hard HEAD^		#版本回退。HEAD^回退到上一个，HEAD^^回退到上上个，HEAD~100回到上100的版本
 $git reset --hard 版本ID	#回到版本号所对应的版本中，支持向前向后回复版本
 $git reflog					#可以查看全部的版本变化
+
+$git checkout -- 文件名	#放弃文件的修改：1.文件自修改还未放入暂存区，将撤销修改到版本库一模一样的状态
+							#				   2.文件已添加到暂存区，又进行自修改，撤销修改到和暂存区中的一致
+$git reset HEAD 文件名		#把放入暂存区的修改文件撤销掉（UNstage），重新放回工作区
