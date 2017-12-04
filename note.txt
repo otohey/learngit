@@ -1,0 +1,5 @@
+Git操作学习笔记：
+1.安装
+安装Git后，打开Git bash，进行设置（指明自己机器）
+$git config --golbal user.name "XXX"
+$git config --golbal user.emali "xxx@XX.xx"
