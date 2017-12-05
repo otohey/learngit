@@ -1,9 +1,16 @@
-Git操作学习笔记：
-1.安装
+#Git操作学习笔记，notepad++中编写
+
+"""
+Git安装介绍
+"""
 安装Git后，打开Git bash，进行设置（指明自己机器）
 $git config --golbal user.name "XXX"
 $git config --golbal user.emali "xxx@XX.xx"
 
+
+"""
+Git的简单操作命令
+"""
 $mkdir 文件夹名			#在当前目录下创建文件夹
 $cd 文件夹名				#进入到指定文件夹下，但必须在目录中
 $pwd						#显示当前所在目录
@@ -12,16 +19,13 @@ $git add 文件名			#添加指定文件到Git的仓库中
 $git commit -m "xx"			#提交文件到Git的仓库，"—m"是参数，xx为改动的说明
 $git status					#查看仓库的当前状态，可用于判别是否有文件修改后却未添加add到仓库，以及是否提交commit
 $git diff                   #若有修改，则将显示修改信息
-
 $git log					#显示修改信息。--pretty=online美化下信息
 $git reset --hard HEAD^		#版本回退。HEAD^回退到上一个，HEAD^^回退到上上个，HEAD~100回到上100的版本
 $git reset --hard 版本ID	#回到版本号所对应的版本中，支持向前向后回复版本
 $git reflog					#可以查看全部的版本变化
-
 $git checkout -- 文件名	#放弃文件的修改：1.文件自修改还未放入暂存区，将撤销修改到版本库一模一样的状态
 							#				   2.文件已添加到暂存区，又进行自修改，撤销修改到和暂存区中的一致
 $git reset HEAD 文件名		#把放入暂存区的修改文件撤销掉（UNstage），重新放回工作区
-
 $rm 文件名					#将当前目录下的指定文件删除，有无添加到Git仓库的文件都可以
 							#可以通过"git checkout -- 文件名"将误删的文件回复到最新版本，即将仓库里的文件放到工作区
 $git rm 文件名				#将该文件从目录下删除，并把其从Git版本库中移除
