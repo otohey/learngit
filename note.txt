@@ -1,11 +1,12 @@
 #Git操作学习笔记，notepad++中编写
 
 """
-Git安装介绍
+Git安装介绍及全局设置
 """
 安装Git后，打开Git bash，进行设置（指明自己机器）
 $git config --golbal user.name "XXX"
 $git config --golbal user.emali "xxx@XX.xx"
+$git config --golabl core.editor vim
 
 
 """
@@ -32,8 +33,31 @@ $git rm 文件名			        #将该文件从目录下删除，并把其从Git版
 				          #由于已经从Git仓库中移除了，因此无法使用checkout回复
 $git rm --cached 文件名                   #不删除对应文件，并且不再追踪该文件
 $git mv file_from file_to		  #移动文件并重命名。流程：将源文件复制并重命名成新文件————删除源文件————追踪新文件
+$git tag				  #列出已有标签
+$git tag -l 'v1.*'			  #将所有v1.x的标签都列出来
+$git tag 标签				#将当然提交添加标签，轻量标签
+$git tag -a 标签 				#在当前提交添加附注标签，将会让你输入标签信息，也使用 --message=""
+					   推荐使用 附注标签
+$git tag -a 标签 校验和		      #在指定提交下添加标签		
 
-							
+
+
+
+
+"""
+Git的分支操作命令
+"""
+$git log --online --decorate --all --graph	#已树图形式显示各个分支所指向的对象
+$git branch 分支名字		     	     #在当前提交下，创建一个分支
+$git checkout 分支名字		     	     #切换到对应分支
+$git checkout -b 分支名字			     #创建一个分支，并切换到该分支
+$git checkout -b 分支名字 标签号	 	  #在指定的标签下创建分支
+$git merge 分支名字				     #将 分支名字 合并到当前分支
+$git rebase 分支名字			     #将当前分支的基底切换到  分支名字 上去，实现串流
+$git rebase --onto master server client		#取出 client 分支，找出处于 client 分支和 server 分支的共同祖先之后的修改，然后把它们在 master 分支上重放一遍
+$git rebase A B				 	#将分支B变基到分支A上
+
+
 """
 "利用GitHub建立远程库"——简要流程：
 """
